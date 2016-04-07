@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Model.EF.Content>
+
+@{
+    ViewBag.Title = "Tag";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var tag = (Model.EF.Tag)ViewBag.Tag;
+}
+
+
+<div class="content">
+    <div class="content_top">
+        <div class="heading">
+            <h3>@tag.Name</h3>
+        </div>
+        <div class="see">
+
+        </div>
+        <div class="clear"></div>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="image group">
+            <div class="grid images_3_of_1">
+                <img src="@item.Image" alt="" />
+            </div>
+            <div class="grid news_desc">
+                <h3><a href="/tin-tuc/@item.MetaTitle"></a>@item.Name</h3>
+                <h4>Ngày viết: @item.CreatedDate <span><a href="#">bởi: @item.CreatedBy</a></span></h4>
+                <p>@item.Description</p>
+                <p>@item.Detail<a href="#" title="more">[....]</a></p>
+            </div>
+        </div>
+    }
+
+    @if (ViewBag.TotalPage > 1)
+    {
+        var pageDisplay = (int)ViewBag.MaxPage;
+        int totalPage = (int)ViewBag.TotalPage;
+        int currentPage = ((int)ViewBag.Page);
+
+        var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
+        var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
+
+        var link = "/tag/" + tag.ID;
+        <nav>
+            <ul class="pagination">
+                @if (currentPage > ViewBag.First)
+                {
+                    <li><a href="@link?page=@ViewBag.First" title="Trang đầu" class="first"><i class="fa fa-angle-double-left"></i></a></li>
+                    <li><a href="@link?page=@ViewBag.Prev" title="Trang trước" class="first"><i class="fa fa-angle-left"></i></a></li>
+                }
+                @for (int i = startPageIndex; i <= endPageIndex; i++)
+                {
+                    if (currentPage == 1)
+                    {
+                        <li><a href="@link?page=@i" class="active" title="Trang @i">@i</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="@link?page=@i" class="pos" title="Trang @i">@i</a></li>
+                    }
+                }
+                @if (currentPage < totalPage)
+                {
+                    <li><a href="@link?page=@ViewBag.Next" class="next" title="Trang sau"><i class="fa fa-angle-right"></i></a></li>
+                    <li><a href="@link?page=@ViewBag.Last" class="next" title="Trang cuối"><i class="fa fa-angle-double-right"></i></a></li>
+                }
+            </ul>
+        </nav>
+
+    }
+
+</div>
+

@@ -1,0 +1,10 @@
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\Common\bin\Debug\Common.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\Common\bin\Debug\Common.pdb
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\Common\obj\Debug\Common.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\Common\obj\Debug\Common.pdb
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\Common\bin\Debug\Common.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\Common\bin\Debug\Common.pdb
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\Common\obj\Debug\Common.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\Common\obj\Debug\Common.pdb

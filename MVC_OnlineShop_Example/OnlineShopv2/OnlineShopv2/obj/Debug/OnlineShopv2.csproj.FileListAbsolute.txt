@@ -1,0 +1,138 @@
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\OnlineShopv2.dll.config
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\OnlineShopv2.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\OnlineShopv2.pdb
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Antlr3.Runtime.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\EntityFramework.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\EntityFramework.SqlServer.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Model.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Newtonsoft.Json.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Owin.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\PagedList.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\PagedList.Mvc.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.Helpers.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.Mvc.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.Optimization.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.Razor.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.WebPages.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\WebGrease.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Model.pdb
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\EntityFramework.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\EntityFramework.SqlServer.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\PagedList.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\PagedList.Mvc.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.Helpers.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.Mvc.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.Optimization.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.Razor.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.WebPages.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Antlr3.Runtime.pdb
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Newtonsoft.Json.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\obj\Debug\OnlineShopv2.csprojResolveAssemblyReference.cache
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\obj\Debug\OnlineShopv2.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\obj\Debug\OnlineShopv2.pdb
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\CKFinder.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\CKFinder.pdb
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Common.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Common.pdb
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\BotDetect.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\BotDetect.Web.UI.Mvc.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Facebook.dll
+C:\Users\Ugly Truth\documents\visual studio 2013\Projects\OnlineShopv2\OnlineShopv2\bin\Facebook.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\OnlineShopv2.dll.config
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\OnlineShopv2.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\OnlineShopv2.pdb
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Antlr3.Runtime.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\BotDetect.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\BotDetect.Web.UI.Mvc.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\CKFinder.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Common.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\EntityFramework.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\EntityFramework.SqlServer.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Facebook.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Model.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Newtonsoft.Json.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Owin.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\PagedList.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\PagedList.Mvc.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.Helpers.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.Mvc.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.Optimization.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.Razor.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.WebPages.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\WebGrease.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Common.pdb
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Model.pdb
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\CKFinder.pdb
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\EntityFramework.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\EntityFramework.SqlServer.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Facebook.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\PagedList.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\PagedList.Mvc.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.Helpers.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.Mvc.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.Optimization.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.Razor.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.WebPages.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Antlr3.Runtime.pdb
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Newtonsoft.Json.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\obj\Debug\OnlineShopv2.csprojResolveAssemblyReference.cache
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\obj\Debug\OnlineShopv2.dll
+C:\Users\Ugly Truth\Desktop\MVC_OnlineShop_Example-39a866cab20855eb44f330cf300a6e529c459ef1\OnlineShopv2\OnlineShopv2\obj\Debug\OnlineShopv2.pdb

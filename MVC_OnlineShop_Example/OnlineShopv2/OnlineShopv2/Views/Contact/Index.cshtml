@@ -1,0 +1,75 @@
+﻿@model Model.EF.Contact
+@{
+    ViewBag.Title = "Liên hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    #mapCanvas {
+        height: 175px;
+    }
+</style>
+@section jsFooter{
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="/assets/client/js/controller/contactController.js"></script>
+    <script>
+
+        // This example displays a marker at the center of Australia.
+        // When the user clicks the marker, an info window opens.
+        //20.953448, 105.829148
+        function initMap() {
+            var uluru = { lat: 20.953448, lng: 105.829148 };
+            var map = new google.maps.Map(document.getElementById('mapCanvas'), {
+                zoom: 14,
+                center: uluru
+            });
+
+            var contentString = '@Html.Raw(Model.Content)';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+                title: 'Địa chỉ'
+            });
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initMap);
+    </script>
+}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col span_1_of_3">
+                <h2>Vị trí</h2>
+                <div class="map" id="mapCanvas"></div>
+                <h2>Thông tin liên hệ</h2>
+                @Html.Raw(Model.Content)
+            </div>
+            <div class="col span_2_of_3">
+                <h2>Liên hệ với chúng tôi</h2>
+                <form>
+                    <div class="form-group">
+                        <label>Họ và tên</label>
+                        <input type="text" id="txtName" class="form-control" />
+                        <label>Địa chỉ</label>
+                        <input type="text" id="txtAddress" class="form-control" />
+                        <label>Điện thoại</label>
+                        <input type="text" id="txtMobile" class="form-control" />
+                        <label>Email</label>
+                        <input type="text" id="txtEmail" class="form-control" />
+                        <label>Nội dung phản hồi</label>
+                        <textarea id="txtContent" class="form-control" rows="4"></textarea>
+
+                    </div>
+                    <button id="btnSend" class="btn btn- btn-reddit">Gửi phản hồi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
