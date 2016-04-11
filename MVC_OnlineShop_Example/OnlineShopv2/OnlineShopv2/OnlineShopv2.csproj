@@ -204,6 +204,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Models\DistrictModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -1750,6 +1751,7 @@
     <Content Include="assets\client\js\controller\cartController.js" />
     <Content Include="assets\client\js\controller\contactController.js" />
     <Content Include="assets\client\js\controller\emailController.js" />
+    <Content Include="assets\client\js\controller\passwordController.js" />
     <Content Include="assets\client\js\controller\userController.js" />
     <Content Include="assets\client\js\controller\wishController.js" />
     <Content Include="assets\client\js\easing.js" />
@@ -1765,6 +1767,7 @@
     <Content Include="assets\client\js\startstop-slider.js" />
     <Content Include="assets\client\template\ConfirmEmail.html" />
     <Content Include="assets\client\template\feedback.html" />
+    <Content Include="assets\client\template\GetPassword.html" />
     <Content Include="assets\client\template\neworder.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -2211,6 +2214,8 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Cart\WishList.cshtml" />
     <Content Include="Views\User\ResendEmail.cshtml" />
+    <Content Include="Views\User\ChangePassword.cshtml" />
+    <Content Include="Views\User\ForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

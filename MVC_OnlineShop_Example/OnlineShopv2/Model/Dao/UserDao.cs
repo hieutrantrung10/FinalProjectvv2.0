@@ -223,5 +223,20 @@ namespace Model.Dao
         {
             return db.Users.SingleOrDefault(x =>x.Email == email);
         }
+
+        public bool ChangePass(User entity)
+        {
+            try
+            {
+                var user = db.Users.Find(entity.ID);
+                user.Password = entity.Password;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

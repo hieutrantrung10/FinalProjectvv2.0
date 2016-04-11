@@ -104,33 +104,11 @@ namespace OnlineShopv2.Controllers
             return View(model);
         }
 
-        //test resend email
         public ActionResult ResendEmail()
         {
             return View();
         }
 
-        //public ActionResult ResendEmail(User model)
-        //{
-        //    var dao = new UserDao();
-        //    var user = dao.GetByEmail(model.Email);
-        //    var token = user.CreatedBy;
-        //    var result = dao.Update(user);
-        //    if (result)
-        //    {
-        //        string callbackUrl =
-        //            System.Web.HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) +
-        //            "/User/Verify/" + token;
-        //        string mail =
-        //            System.IO.File.ReadAllText(Server.MapPath("~/assets/client/template/ConfirmEmail.html"));
-        //        mail = mail.Replace("{{Link}}", callbackUrl);
-
-        //        new MailHelper().SendMail(model.Email, "Email gửi lại xác nhận tài kooản", mail);
-        //        return RedirectToAction("Confirmation");
-        //    }
-        //    return View(model);
-
-        //}
         [HttpPost]
         public JsonResult ResendEmail(string email)
         {
@@ -178,6 +156,83 @@ namespace OnlineShopv2.Controllers
         }
         #endregion
 
+        public ActionResult ChangePassword()
+        {
+            var session = Session[CommonConstants.USER_SESSION];
+            if (session == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ChangePassword(ChangePasswordModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var tmp = model.Email;
+                var dao = new UserDao();
+                var user = dao.GetByEmail(tmp);
+                if (user.Password == model.Password)
+                {
+                    var encryptedMd5Pas = Encryptor.MD5Hash(model.NewPassword);
+                    user.Password = encryptedMd5Pas;
+                    var result = dao.ChangePass(user);
+                    if (result)
+                    {
+                        ViewBag.Success = "Đổi mật khẩu thành công";
+                        model = new ChangePasswordModel();
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Đổi mật khẩu thất bại");
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("","bạn đã nhập sai mật khâu cũ");
+                }
+                
+            }
+            return View(model);
+        }
+
+        //test forgot password
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult ForgotPassword(string email,string username)
+        {
+            var dao = new UserDao();
+            var user = dao.GetByEmail(email);
+            user.Password = Encryptor.MD5Hash("123456");
+            var result = dao.ChangePass(user);
+            if (result)
+            {
+                string password = "123456";
+                string mail =
+                    System.IO.File.ReadAllText(Server.MapPath("~/assets/client/template/GetPassword.html"));
+                mail = mail.Replace("{{UserName}}", username);
+                mail = mail.Replace("{{Password}}", password);
+
+                new MailHelper().SendMail(user.Email, "Email reset lại mật khẩu", mail);
+                return Json(new
+                {
+                    status = true
+                });
+            }
+            else
+            {
+                return Json(new
+                {
+                    status = false
+                });
+            }
+            
+        }
         #region LOGIN
         [HttpGet]
         public ActionResult Login()

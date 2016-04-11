@@ -40,6 +40,18 @@ namespace OnlineShopv2
                namespaces: new[] { "OnlineShopv2.Controllers" }
            );
             routes.MapRoute(
+               name: "ForgotPass",
+               url: "quen-mat-khau",
+               defaults: new { controller = "User", action = "ForgotPassword", id = UrlParameter.Optional },
+               namespaces: new[] { "OnlineShopv2.Controllers" }
+           );
+            routes.MapRoute(
+              name: "ChangePassword",
+              url: "doi-mat-khau",
+              defaults: new { controller = "User", action = "ChangePassword", id = UrlParameter.Optional },
+              namespaces: new[] { "OnlineShopv2.Controllers" }
+          );
+            routes.MapRoute(
                name: "Resend Email",
                url: "gui-lai-email",
                defaults: new { controller = "User", action = "ResendEmail", id = UrlParameter.Optional },
