@@ -1749,6 +1749,7 @@
     <Content Include="assets\client\js\controller\baseController.js" />
     <Content Include="assets\client\js\controller\cartController.js" />
     <Content Include="assets\client\js\controller\contactController.js" />
+    <Content Include="assets\client\js\controller\emailController.js" />
     <Content Include="assets\client\js\controller\userController.js" />
     <Content Include="assets\client\js\controller\wishController.js" />
     <Content Include="assets\client\js\easing.js" />
@@ -2209,6 +2210,7 @@
     <Content Include="Views\Product\Search.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Cart\WishList.cshtml" />
+    <Content Include="Views\User\ResendEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

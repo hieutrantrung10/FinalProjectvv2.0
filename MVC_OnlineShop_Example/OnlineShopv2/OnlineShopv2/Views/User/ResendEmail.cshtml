@@ -1,0 +1,34 @@
+﻿@model Model.EF.User
+@{
+    ViewBag.Title = "ResendEmail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section jsFooter{
+    <script src="/assets/client/js/controller/emailController.js"></script>
+}
+<div class="form-horizontal">
+    <h4 class="col-md-7">HÃY NHẬP LẠI EMAIL ĐỂ NHẬN LẠI EMAIL XÁC NHẬN</h4>
+    <hr />
+    <div class="form-group">
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        @if (ViewBag.Success != null)
+        {
+            <div class="alert alert-success">@ViewBag.Success</div>
+        }
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-5">
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @id = "txtEmail" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-5"></label>
+        <div class="col-md-7">
+            <input type="submit" id="btnSend" value="Gửi" class="btn btn-instagram" />
+        </div>
+    </div>
+</div>
+

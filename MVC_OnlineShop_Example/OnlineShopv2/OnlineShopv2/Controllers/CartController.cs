@@ -123,7 +123,7 @@ namespace OnlineShopv2.Controllers
             var user = Session[CommonConstants.USER_SESSION];
             if (user == null)
             {
-                return RedirectToAction("Login","User");
+                return RedirectToAction("Login", "User");
             }
             var list = new List<CartItem>();
             if (cart != null)
@@ -133,7 +133,7 @@ namespace OnlineShopv2.Controllers
             return View(list);
         }
         [HttpPost]
-        public ActionResult Payment(string shipName,string address,string phoneNumber,string email)
+        public ActionResult Payment(string shipName, string address, string phoneNumber, string email)
         {
             var order = new Order();
             var user = Session[CommonConstants.USER_SESSION];
@@ -145,7 +145,7 @@ namespace OnlineShopv2.Controllers
             order.ShipAddress = address;
             order.ShipMobile = phoneNumber;
             order.ShipName = shipName;
-            order.ShipEmail = email;      
+            order.ShipEmail = email;
 
             try
             {
@@ -163,7 +163,7 @@ namespace OnlineShopv2.Controllers
                     //bổ sung vào trong bảng SQL về tên sản phẩm và đơn giá sản phẩm 
                     detailDao.Insert(orderDetail);
 
-                    total += (item.Product.Price.GetValueOrDefault(0)*item.Quantity);
+                    total += (item.Product.Price.GetValueOrDefault(0) * item.Quantity);
                 }
                 string content = System.IO.File.ReadAllText((Server.MapPath("~/assets/client/template/neworder.html")));
 
@@ -177,7 +177,7 @@ namespace OnlineShopv2.Controllers
                 var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
 
                 new MailHelper().SendMail(email, "Đơn hàng mới từ HomeSHOP", content);
-                new MailHelper().SendMail(toEmail,"Đơn hàng mới từ HomeSHOP",content);
+                new MailHelper().SendMail(toEmail, "Đơn hàng mới từ HomeSHOP", content);
 
             }
             catch (Exception ex)
@@ -186,11 +186,11 @@ namespace OnlineShopv2.Controllers
                 return Redirect("/loi-gui-don-hang");
             }
             return Redirect("/hoan-thanh");
-            
+
         }
 
         ////test
-        
+
         //public ActionResult PaypalPayment()
         //{
         //    var getData = new GetDataPaypal();
@@ -307,5 +307,6 @@ namespace OnlineShopv2.Controllers
                 status = true
             });
         }
+
     }
 }

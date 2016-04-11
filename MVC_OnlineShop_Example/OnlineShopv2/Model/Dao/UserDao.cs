@@ -218,5 +218,10 @@ namespace Model.Dao
             return data.Select(x => x.RoleID).ToList();
 
         }
+
+        public User GetByEmail(string email)
+        {
+            return db.Users.SingleOrDefault(x =>x.Email == email);
+        }
     }
 }

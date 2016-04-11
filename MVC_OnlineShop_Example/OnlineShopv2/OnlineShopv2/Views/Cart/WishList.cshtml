@@ -32,7 +32,7 @@
                             <td><input type="text" class="txtQuantity" data-id="@item.Product.ID" value="@item.Quantity" /></td>
                             <td>@item.Product.Price.GetValueOrDefault(0).ToString("N0")</td>
                             <td>@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString("N0"))</td>
-                            <td><a href="#" data-id="@item.Product.ID" class="btn-add"><i class="fa fa-plus-square-o"></i></a></td>
+                            <td><a href="#" data-id="@item.Product.ID" class="btn-add"><i class="fa fa-shopping-cart"></i></a></td>
                             <td><a href="#" data-id="@item.Product.ID" class="btn-delete"><i class="fa fa-trash"></i></a></td>
                         </tr>
                     }

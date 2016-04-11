@@ -40,6 +40,12 @@ namespace OnlineShopv2
                namespaces: new[] { "OnlineShopv2.Controllers" }
            );
             routes.MapRoute(
+               name: "Resend Email",
+               url: "gui-lai-email",
+               defaults: new { controller = "User", action = "ResendEmail", id = UrlParameter.Optional },
+               namespaces: new[] { "OnlineShopv2.Controllers" }
+           );
+            routes.MapRoute(
                 name: "AddWishList",
                 url: "them-ua-thich",
                 defaults: new { controller = "Cart", action = "AddWishList", id = UrlParameter.Optional },

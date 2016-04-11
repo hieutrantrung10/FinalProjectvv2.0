@@ -104,7 +104,53 @@ namespace OnlineShopv2.Controllers
             return View(model);
         }
 
+        //test resend email
+        public ActionResult ResendEmail()
+        {
+            return View();
+        }
 
+        //public ActionResult ResendEmail(User model)
+        //{
+        //    var dao = new UserDao();
+        //    var user = dao.GetByEmail(model.Email);
+        //    var token = user.CreatedBy;
+        //    var result = dao.Update(user);
+        //    if (result)
+        //    {
+        //        string callbackUrl =
+        //            System.Web.HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) +
+        //            "/User/Verify/" + token;
+        //        string mail =
+        //            System.IO.File.ReadAllText(Server.MapPath("~/assets/client/template/ConfirmEmail.html"));
+        //        mail = mail.Replace("{{Link}}", callbackUrl);
+
+        //        new MailHelper().SendMail(model.Email, "Email gửi lại xác nhận tài kooản", mail);
+        //        return RedirectToAction("Confirmation");
+        //    }
+        //    return View(model);
+
+        //}
+        [HttpPost]
+        public JsonResult ResendEmail(string email)
+        {
+            var user = new UserDao().GetByEmail(email);
+            var token = user.CreatedBy;
+
+            string callbackUrl =
+                System.Web.HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) +
+                "/User/Verify/" + token;
+            string mail =
+                System.IO.File.ReadAllText(Server.MapPath("~/assets/client/template/ConfirmEmail.html"));
+            mail = mail.Replace("{{Link}}", callbackUrl);
+
+            new MailHelper().SendMail(user.Email, "Email gửi lại xác nhận tài khoản", mail);
+            return Json(new
+            {
+                status = true
+            });
+
+        }
         [AllowAnonymous]
         public ActionResult Confirmation()
         {
