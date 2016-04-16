@@ -3,7 +3,7 @@
 @using PagedList.Mvc
 @model IEnumerable<Model.EF.Product>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Danh mục sản phẩm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -19,7 +19,7 @@
     {
         var link = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
         <div class="grid_1_of_4 images_1_of_4">
-            <a href="@link"><img src="@item.Image" alt="" /></a>
+            <a href="@link"><img src="@item.Image" alt="@item.Name" /></a>
             <h2>@item.Name </h2>
             <div class="price-details">
                 <div class="price-number">

@@ -8,6 +8,10 @@
 @section header{
     Danh sách sản phẩm 
 }
+@section jsFooter{
+    
+<script src="/assets/admin/js/controller/productController.js"></script>
+}
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
@@ -33,10 +37,11 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                
                                 <th>Tên sản phẩm</th>
                                 <th>Mã sản phẩm</th>
                                 <th>Số lượng sản phẩm</th>
+                                <th>#</th>
                                 
                             </tr>
                         </thead>
@@ -44,7 +49,11 @@
                             @foreach (var item in Model)
                             {
                                 <tr class="success" id="row_@item.ID">
+                                   <td>@item.Name</td>
+                                    <td>@item.Code</td>
+                                    <td>@item.Quality</td>
                                     <td>
+                                        <a href="#" data-id="@item.ID" class="btn-images">Quản lý ảnh</a>
                                         <a href="/Admin/Product/Edit/@item.ID">Sửa</a>
                                         |
                                         @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
@@ -54,9 +63,6 @@
                                             HttpMethod = "Delete"
                                         })
                                     </td>
-                                    <td>@item.Name</td>
-                                    <td>@item.Code</td>
-                                    <td>@item.Quality</td>
                                 </tr>
                             }
 
@@ -66,6 +72,28 @@
                     @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
                 </div>
                 <!-- /.table-responsive -->
+            </div>
+        </div>
+    </div>
+</div>
+<div id="imagesManage" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Quản lý ảnh</h4>
+            </div>
+            <div class="modal-body">
+                <div id="imageList" style="margin: 10px">
+                    
+                </div>
+                <div class="clear"></div>
+                <input type="button" id="btnChooseImages" class="btn btn-primary" value="Chọn ảnh"/>
+                <input type="hidden" id="hidProductID" value="0"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="btnSaveImages">Lưu</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
             </div>
         </div>
     </div>

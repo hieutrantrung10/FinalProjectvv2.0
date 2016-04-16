@@ -183,5 +183,12 @@ namespace Model.Dao
             return model.OrderByDescending(x => x.CreatedDate).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
             //return model.ToList();
         }
+
+        public void UpdateImages(long productId, string images)
+        {
+            var product = db.Products.Find(productId);
+            product.MoreImages = images;
+            db.SaveChanges();
+        }
     }
 }

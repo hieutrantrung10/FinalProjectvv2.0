@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
+using System.Xml.Linq;
 using Model.Dao;
 using Model.EF;
 using OnlineShopv2.Common;
@@ -97,6 +99,54 @@ namespace OnlineShopv2.Areas.Admin.Controllers
             ViewBag.CategoryID = new SelectList(dao.ListAll(),"ID","Name",selectedId);
         }
 
-       
+        public JsonResult SaveImages(long id,string images)
+        {
+            JavaScriptSerializer jss = new JavaScriptSerializer();
+            var listImages = jss.Deserialize<List<string>>(images);
+
+            XElement xElement = new XElement("Images");
+            foreach (var item in listImages)
+            {
+                int n = item.LastIndexOf('/');
+                var subitem = item.Substring(n+1);
+                subitem = "/Data/images/" + subitem;
+                xElement.Add(new XElement("Image", subitem));
+            }
+            ProductDao dao = new ProductDao();
+            try
+            {
+                dao.UpdateImages(id, xElement.ToString());
+                return Json(new
+                {
+                    status = true
+                });
+            }
+            catch (Exception)
+            {
+                return Json(new
+                {
+                    status = false
+                });
+            }
+            
+        }
+
+        public JsonResult LoadImages(long id)
+        {
+            ProductDao dao = new ProductDao();
+            var product = dao.GetByID(id);
+            var images = product.MoreImages;
+            XElement xImages = XElement.Parse(images);
+            List<string> listImagesReturn = new List<string>();
+
+            foreach (XElement element in xImages.Elements())
+            {
+                listImagesReturn.Add(element.Value);
+            }
+            return Json(new
+            {
+                data = listImagesReturn
+            }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

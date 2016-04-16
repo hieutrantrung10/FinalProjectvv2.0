@@ -1,9 +1,12 @@
 ﻿@model Model.EF.Content
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = Model.Name;
+    ViewBag.Keywords = Model.MetaKeywords;
+    ViewBag.Description = Model.MetaDescriptions;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-570e3c45fa9656a3"></script>
 <div class="content">
     <div class="content_top">
         <div class="heading">
@@ -22,5 +25,12 @@
                 }
             }
         </ul>
+        <div class="share-desc">
+            <div class="share">
+                <p>Chia sẻ :</p>
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_sharing_toolbox"></div>
+            </div>
+        </div>
     </div>
 </div>

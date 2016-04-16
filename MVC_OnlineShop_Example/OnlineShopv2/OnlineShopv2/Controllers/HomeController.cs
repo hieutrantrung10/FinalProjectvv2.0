@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -17,6 +18,10 @@ namespace OnlineShopv2.Controllers
             var dao = new ProductDao();
             ViewBag.NewProducts = dao.ListNewProduct(4);
             ViewBag.ListFeatureProducts = dao.ListFeatureProduct(4);
+
+            ViewBag.Title = ConfigurationManager.AppSettings["HomeTitle"];
+            ViewBag.Keywords = ConfigurationManager.AppSettings["HomeKeyword"];
+            ViewBag.Description = ConfigurationManager.AppSettings["HomeDescription"];
             return View();
         }
         [ChildActionOnly]

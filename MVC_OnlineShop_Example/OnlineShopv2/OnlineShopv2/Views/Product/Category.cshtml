@@ -2,6 +2,8 @@
 @{
     var category = (Model.EF.ProductCategory)ViewBag.Category;
     ViewBag.Title = category.Name;
+    ViewBag.Keywords = category.MetaKeywords;
+    ViewBag.Description = category.MetaDescriptions;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,7 +13,7 @@
             <h3>@category.Name</h3>
         </div>
         <div class="see">
-            <p><a href="/san-pham">See all Products</a></p>
+            <p><a href="/san-pham">Toàn bộ sản phẩmm</a></p>
         </div>
         <div class="clear"></div>
     </div>
@@ -20,7 +22,7 @@
         {
             var link = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
             <div class="grid_1_of_4 images_1_of_4">
-                <a href="@link"><img src="@item.Image" alt="" /></a>
+                <a href="@link"><img src="@item.Image" alt="@item.Name" /></a>
                 <h2>@item.Name </h2>
                 <span>@item.CateName</span>
                 <div class="price-details">

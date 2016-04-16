@@ -1,12 +1,17 @@
 ﻿@model Model.EF.Product
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = Model.Name;
+    ViewBag.Keywords = Model.MetaKeywords;
+    ViewBag.Description = Model.MetaDescriptions;
     Layout = "~/Views/Shared/_Layout.cshtml";
     var category = (Model.EF.ProductCategory) ViewBag.Category;
     var relatedProducts = (List<Model.EF.Product>) ViewBag.RelatedProducts;
 }
 
 <h2>@Model.Name</h2>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-570e3c45fa9656a3"></script>
+
 <div class="content">
     <div class="content_top">
         <div class="back-links">
@@ -22,7 +27,7 @@
                         <div id="products_example">
                             <div id="products">
                                 <div class="slides_container">
-                                    <a href="#" target="_blank"><img src="@Model.Image" alt=" " /></a>                                    
+                                    <a href="#" target="_blank"><img src="@Model.Image" alt="@Model.Name" /></a>                                    
                                 </div>
                                 @*<ul class="pagination">
                                     <li><a href="#"><img src="images/thumbnailslide-1.jpg" alt=" " /></a></li>
@@ -46,10 +51,8 @@
                     <div class="share-desc">
                         <div class="share">
                             <p>Chia sẻ :</p>
-                            <ul>
-                                <li><a href="#"><img src="/assets/client/images/facebook.png" alt="" /></a></li>
-                                <li><a href="#"><img src="/assets/client/images/twitter.png" alt="" /></a></li>
-                            </ul>
+                            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                            <div class="addthis_sharing_toolbox"></div>
                         </div>
                         <div class="button"><span><a href="/them-gio-hang?productId=@Model.ID&quantity=1">Thêm vào giỏ</a></span></div>
                         <div class="clear"></div>
