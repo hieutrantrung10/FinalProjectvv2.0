@@ -135,6 +135,7 @@ namespace OnlineShopv2.Controllers
         [HttpPost]
         public ActionResult Payment(string shipName, string address, string phoneNumber, string email)
         {
+            string content = System.IO.File.ReadAllText((Server.MapPath("~/assets/client/template/neworder.html")));
             var order = new Order();
             var user = Session[CommonConstants.USER_SESSION];
             if (user == null)
@@ -160,18 +161,18 @@ namespace OnlineShopv2.Controllers
                     orderDetail.OrderID = id;
                     orderDetail.Price = item.Product.Price;
                     orderDetail.Quantity = item.Quantity;
+                    orderDetail.ProductName = item.Product.Name;
                     //bổ sung vào trong bảng SQL về tên sản phẩm và đơn giá sản phẩm 
-                    detailDao.Insert(orderDetail);
-
+                    detailDao.Insert(orderDetail);                    
                     total += (item.Product.Price.GetValueOrDefault(0) * item.Quantity);
                 }
-                string content = System.IO.File.ReadAllText((Server.MapPath("~/assets/client/template/neworder.html")));
+                //string content = System.IO.File.ReadAllText((Server.MapPath("~/assets/client/template/neworder.html")));
 
                 content = content.Replace("{{CustomerName}}", shipName);
                 content = content.Replace("{{OrderID}}", order.ID.ToString());
                 content = content.Replace("{{PhoneNumber}}", phoneNumber);
                 content = content.Replace("{{Email}}", email);
-                content = content.Replace("{{Address}}", address);
+                content = content.Replace("{{Address}}", address);                
                 content = content.Replace("{{Total}}", total.ToString("N0"));
 
                 var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();

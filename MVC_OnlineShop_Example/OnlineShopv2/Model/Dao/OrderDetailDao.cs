@@ -30,5 +30,10 @@ namespace Model.Dao
             }
             
         }
+
+        public IQueryable<OrderDetail> GetByID(long id)
+        {
+            return db.OrderDetails.Where(x => x.OrderID == id);
+        }
     }
 }

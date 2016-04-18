@@ -22,5 +22,7 @@ namespace Model.EF
         public int? Quantity { get; set; }
 
         public decimal? Price { get; set; }
+        [StringLength(250)]
+        public string ProductName { get; set; }
     }
 }

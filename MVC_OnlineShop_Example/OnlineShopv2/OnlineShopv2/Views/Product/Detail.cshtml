@@ -1,4 +1,7 @@
-﻿@model Model.EF.Product
+﻿@using System.Runtime.Remoting.Metadata
+@using System.Xml
+@using System.Xml.Linq
+@model Model.EF.Product
 @{
     ViewBag.Title = Model.Name;
     ViewBag.Keywords = Model.MetaKeywords;
@@ -29,13 +32,15 @@
                                 <div class="slides_container">
                                     <a href="#" target="_blank"><img src="@Model.Image" alt="@Model.Name" /></a>                                    
                                 </div>
+                                @*<div class="button">
+                                    <a href="#" data-id="@Model.ID" class="btn btn-outline" id="btnImages">Hiển thị thêm về ảnh của sản phẩm</a>
+                                </div>*@
                                 @*<ul class="pagination">
-                                    <li><a href="#"><img src="images/thumbnailslide-1.jpg" alt=" " /></a></li>
-                                    <li><a href="#"><img src="images/thumbnailslide-2.jpg" alt=" " /></a></li>
-                                    <li><a href="#"><img src="images/thumbnailslide-3.jpg" alt=" " /></a></li>
-                                    <li><a href="#"><img src="images/thumbnailslide-4.jpg" alt=" " /></a></li>
-                                    <li><a href="#"><img src="images/thumbnailslide-5.jpg" alt=" " /></a></li>
-                                    <li><a href="#"><img src="images/thumbnailslide-6.jpg" alt=" " /></a></li>
+                                    @foreach (var element in XDocument.Load("tms.xml").Root.Elements(""))
+                                    {
+                                        <li><a href="#"><img src="images/thumbnailslide-6.jpg" alt=" " /></a></li>
+                                    }
+                                    
                                 </ul>*@
                             </div>
                         </div>
@@ -54,7 +59,7 @@
                             <!-- Go to www.addthis.com/dashboard to customize your tools -->
                             <div class="addthis_sharing_toolbox"></div>
                         </div>
-                        <div class="button"><span><a href="/them-gio-hang?productId=@Model.ID&quantity=1">Thêm vào giỏ</a></span></div>
+                        <div class="button"><span><a href="/them-gio-hang?productId=@Model.ID&quantity=1" class="btn btn-info">Thêm vào giỏ</a></span></div>
                         <div class="clear"></div>
                     </div>
                     <div class="wish-list">

@@ -54,6 +54,7 @@
                                     <td>@item.Quality</td>
                                     <td>
                                         <a href="#" data-id="@item.ID" class="btn-images">Quản lý ảnh</a>
+                                        |
                                         <a href="/Admin/Product/Edit/@item.ID">Sửa</a>
                                         |
                                         @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions

@@ -185,6 +185,7 @@
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
@@ -642,6 +643,7 @@
     <Content Include="assets\admin\dist\css\sb-admin-2.css" />
     <Content Include="assets\admin\dist\css\timeline.css" />
     <Content Include="assets\admin\dist\js\sb-admin-2.js" />
+    <Content Include="assets\admin\js\controller\orderController.js" />
     <Content Include="assets\admin\js\controller\productController.js" />
     <Content Include="assets\admin\js\controller\userController.js" />
     <Content Include="assets\admin\js\flot-data.js" />
@@ -2166,6 +2168,8 @@
     <Content Include="assets\client\scss\_stacked.scss" />
     <Content Include="assets\client\scss\_variables.scss" />
     <Content Include="Areas\Admin\Views\Shared\401.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Detail.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

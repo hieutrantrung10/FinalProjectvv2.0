@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
+using System.Xml;
+using System.Xml.Linq;
 using Model.Dao;
 
 namespace OnlineShopv2.Controllers
@@ -10,7 +13,7 @@ namespace OnlineShopv2.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        public ActionResult Index(int page=1,int pageSize=1)
+        public ActionResult Index(int page = 1, int pageSize = 1)
         {
             //var model = new ProductDao().ListAllPagingClient(page, pageSize);
             //int totalRecord = 0;
@@ -66,8 +69,22 @@ namespace OnlineShopv2.Controllers
 
         public ActionResult Detail(long id)
         {
-            
+
             var product = new ProductDao().GetByID(id);
+            //string xImages = product.MoreImages;
+            //if (xImages != null)
+            //{
+            //    //int n = xImages.LastIndexOf("</Images>");
+            //    //string subImages = xImages.Substring(8, n - 8);
+            //    XmlDocument xDoc = new XmlDocument();
+            //    xDoc.LoadXml(xImages);
+            //    XmlNodeList xList = xDoc.SelectNodes("/Images");
+            //    foreach (XmlNode item in xList)
+            //    {
+            //        string Image = item["Image"].InnerText;
+            //    }
+            //}
+
             ViewBag.Category = new ProductCategoryDao().ViewDetail(product.CategoryID.Value);
             ViewBag.RelatedProducts = new ProductDao().ListRelatedProducts(id);
             return View(product);
@@ -102,5 +119,6 @@ namespace OnlineShopv2.Controllers
 
             return View(model);
         }
+
     }
 }

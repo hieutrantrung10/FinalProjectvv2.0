@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Model.EF.Order>
+@using System.Activities.Statements
+@using PagedList
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+@section header{
+    Danh sách đơn hàng
+}
+@section jsFooter
+{
+<script src="/assets/admin/js/controller/orderController.js"></script>
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel panel-heading">
+                Danh sách đơn hàng
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("Index", "Order", FormMethod.Get))
+                {
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-md-4">
+                                <input type="text" value="@ViewBag.SearchString" class="form-control" name="searchString" />
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-success">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Ngày tạo</th>
+                                <th>Người nhận</th>
+                                <th>Địa chỉ</th>
+                                <th>Trạng thái</th>
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="success" id="row_@item.ID">
+
+                                    <td>@item.ID</td>
+                                    <td>@item.CreatedDate.Value.ToString("dd-MM-yyyy")</td>
+                                    <td>@item.ShipName</td>
+                                    <td>@item.ShipAddress</td>
+                                    <td><a href="#" class="btn-change" data-id="@item.ID">@(item.Status == 0 ? "Đang xử lý" : (item.Status==1 ? "Đã gửi" : "Hủy đơn"))</a></td>
+                                    <td>
+                                        @*<a href="/Admin/Order/Edit/@item.ID">Sửa</a>*@
+                                        <a href="/Admin/Order/Detail/@item.ID">Chi tiết đơn hàng</a>
+                                        |
+                                        @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
+                                            {
+                                                Confirm = "Bạn có chắc muốn xóa đơn hàng này ?",
+                                                OnComplete = "$('#row_" + @item.ID + "').remove()",
+                                                HttpMethod = "Delete"
+                                            })
+                                    </td>
+                                </tr>
+                            }
+
+
+                        </tbody>
+                    </table>
+                    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, @searchString = @ViewBag.SearchString }))
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+        </div>
+    </div>
+</div>
