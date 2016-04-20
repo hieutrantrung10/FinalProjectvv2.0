@@ -71,20 +71,22 @@ namespace OnlineShopv2.Controllers
         {
 
             var product = new ProductDao().GetByID(id);
-            //string xImages = product.MoreImages;
-            //if (xImages != null)
-            //{
-            //    //int n = xImages.LastIndexOf("</Images>");
-            //    //string subImages = xImages.Substring(8, n - 8);
-            //    XmlDocument xDoc = new XmlDocument();
-            //    xDoc.LoadXml(xImages);
-            //    XmlNodeList xList = xDoc.SelectNodes("/Images");
-            //    foreach (XmlNode item in xList)
-            //    {
-            //        string Image = item["Image"].InnerText;
-            //    }
-            //}
-
+            string xImages = product.MoreImages;
+            string newimages = string.Empty;
+            if (xImages != null)
+            {
+                //int n = xImages.LastIndexOf("</Images>");
+                //string subImages = xImages.Substring(8, n - 8);
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.LoadXml(xImages);               
+                XmlNodeList xList = xDoc.SelectNodes("/Images/Image");
+                
+                foreach (XmlNode item in xList)
+                {
+                    newimages += item.InnerText + "#";
+                }
+            }
+            ViewBag.NewImages = newimages;
             ViewBag.Category = new ProductCategoryDao().ViewDetail(product.CategoryID.Value);
             ViewBag.RelatedProducts = new ProductDao().ListRelatedProducts(id);
             return View(product);

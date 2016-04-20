@@ -1,0 +1,77 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IEnumerable<Model.EF.Feedback>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+@section header{
+    Danh sách phản hồi
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel panel-heading">
+                Danh sách phản hồi
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("Index", "Feedback", FormMethod.Get))
+                {
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-md-4">
+                                <input type="text" value="@ViewBag.SearchString" class="form-control" name="searchString" />
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-success">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Tên người gửi</th>
+                                <th>Ngày gửi</th>
+                                <th>Số điện thoại</th>
+                                <th>Email</th>                                
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="success" id="row_@item.ID">
+
+                                    <td>@item.Name</td>
+                                    <td>@item.CreatedDate.Value.ToString("dd-MM-yyyy")</td>
+                                    <td>@item.Phone</td>
+                                    <td>@item.Email</td>                                    
+                                    <td>
+                                        @*<a href="/Admin/Order/Edit/@item.ID">Sửa</a>*@
+                                        <a href="/Admin/Feedback/Detail/@item.ID">Chi tiết góp ý</a>
+                                        |
+                                        @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
+                                            {
+                                                Confirm = "Bạn có chắc muốn xóa phản hồi này ?",
+                                                OnComplete = "$('#row_" + @item.ID + "').remove()",
+                                                HttpMethod = "Delete"
+                                            })
+                                    </td>
+                                </tr>
+                            }
+
+
+                        </tbody>
+                    </table>
+                    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, @searchString = @ViewBag.SearchString }))
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+        </div>
+    </div>
+</div>
+
+

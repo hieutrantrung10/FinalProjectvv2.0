@@ -1,0 +1,19 @@
+﻿@model Model.EF.Feedback
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+@section header{
+    Chi tiết phản hồi
+}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Phản hồi từ khách hàng @Model.Name
+    </div>
+    <div class="panel-body">
+        <p class="lead">@Model.Name</p>
+        <p>@Model.Content</p>              
+    </div>
+    <!-- /.panel-body -->
+</div>
+<!-- /.panel -->

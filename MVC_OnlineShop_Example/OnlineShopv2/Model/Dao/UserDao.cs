@@ -74,7 +74,7 @@ namespace Model.Dao
             return db.Users.SingleOrDefault(x=>x.UserName == userName);
         }
 
-        public User ViewDetail(int id)
+        public User ViewDetail(long id)
         {
             return db.Users.Find(id);
         }

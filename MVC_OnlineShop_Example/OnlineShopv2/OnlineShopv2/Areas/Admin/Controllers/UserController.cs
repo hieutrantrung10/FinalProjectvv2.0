@@ -51,7 +51,7 @@ namespace OnlineShopv2.Areas.Admin.Controllers
             
         }
         [HasCredential(RoleID = "EDIT_USER")]
-        public ActionResult Edit(int id)
+        public ActionResult Edit(long id)
         {
             var user = new UserDao().ViewDetail(id);
             return View(user);

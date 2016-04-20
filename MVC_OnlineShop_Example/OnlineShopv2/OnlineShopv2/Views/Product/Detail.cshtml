@@ -9,6 +9,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     var category = (Model.EF.ProductCategory) ViewBag.Category;
     var relatedProducts = (List<Model.EF.Product>) ViewBag.RelatedProducts;
+    string newimages = ViewBag.NewImages;
 }
 
 <h2>@Model.Name</h2>
@@ -32,6 +33,13 @@
                                 <div class="slides_container">
                                     <a href="#" target="_blank"><img src="@Model.Image" alt="@Model.Name" /></a>                                    
                                 </div>
+                                <ul class="pagination">
+                                    @foreach (var item in newimages.Split('#'))
+                                    {
+                                        <li><a href="#"><img src="@item" style="width: 50px; height: 50px" alt="@item"/></a></li>
+                                    }
+                                </ul>
+                                
                                 @*<div class="button">
                                     <a href="#" data-id="@Model.ID" class="btn btn-outline" id="btnImages">Hiển thị thêm về ảnh của sản phẩm</a>
                                 </div>*@
@@ -127,7 +135,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.......</p>
                 <div class="signup">
                     <form>
-                        <input type="text" value="E-mail address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail address';"><input type="submit" value="Sign up">
+                        <input type="text" value="E-mail address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail address';}"><input type="submit" value="Sign up">
                     </form>
                 </div>
             </div>
