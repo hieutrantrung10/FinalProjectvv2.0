@@ -7,11 +7,13 @@
     ViewBag.Keywords = Model.MetaKeywords;
     ViewBag.Description = Model.MetaDescriptions;
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var category = (Model.EF.ProductCategory) ViewBag.Category;
-    var relatedProducts = (List<Model.EF.Product>) ViewBag.RelatedProducts;
+    var category = (Model.EF.ProductCategory)ViewBag.Category;
+    var relatedProducts = (List<Model.EF.Product>)ViewBag.RelatedProducts;
     string newimages = ViewBag.NewImages;
 }
-
+@section jsFooter{
+    <script src="/assets/client/js/controller/productController.js"></script>
+}
 <h2>@Model.Name</h2>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-570e3c45fa9656a3"></script>
@@ -31,25 +33,14 @@
                         <div id="products_example">
                             <div id="products">
                                 <div class="slides_container">
-                                    <a href="#" target="_blank"><img src="@Model.Image" alt="@Model.Name" /></a>                                    
+                                    <a href="#" target="_blank"><img src="@Model.Image" alt="@Model.Name" /></a>
                                 </div>
                                 <ul class="pagination">
-                                    @foreach (var item in newimages.Split('#'))
+                                    @foreach (var item in newimages.Split('#').Take(newimages.Split('#').Count() - 1))
                                     {
-                                        <li><a href="#"><img src="@item" style="width: 50px; height: 50px" alt="@item"/></a></li>
+                                        <li><a href="#" data-id="@Model.ID"><img class="more-images" src="@item" style="width: 50px; height: 50px" alt="@item" /></a></li>                                        
                                     }
                                 </ul>
-                                
-                                @*<div class="button">
-                                    <a href="#" data-id="@Model.ID" class="btn btn-outline" id="btnImages">Hiển thị thêm về ảnh của sản phẩm</a>
-                                </div>*@
-                                @*<ul class="pagination">
-                                    @foreach (var element in XDocument.Load("tms.xml").Root.Elements(""))
-                                    {
-                                        <li><a href="#"><img src="images/thumbnailslide-6.jpg" alt=" " /></a></li>
-                                    }
-                                    
-                                </ul>*@
                             </div>
                         </div>
                     </div>
@@ -58,9 +49,9 @@
                     <h2>@Model.Name</h2>
                     <p>@Model.Description</p>
                     <div class="price">
-                        <p>Giá: <span>@(Model.Price.HasValue ? Model.Price.Value.ToString("N0"):"Liên hệ")</span></p>
+                        <p>Giá: <span>@(Model.Price.HasValue ? Model.Price.Value.ToString("N0") : "Liên hệ")</span></p>
                     </div>
-                   
+
                     <div class="share-desc">
                         <div class="share">
                             <p>Chia sẻ :</p>
@@ -82,25 +73,25 @@
             <div class="product_desc">
                 <div id="horizontalTab">
                     <ul class="resp-tabs-list">
-                        <li>Mô tả chi tiết</li>            
+                        <li>Mô tả chi tiết</li>
                         <div class="clear"></div>
                     </ul>
                     <div class="resp-tabs-container">
                         <div class="product-desc">
-                        @Html.Raw(Model.Detail)
+                            @Html.Raw(Model.Detail)
                         </div>
                     </div>
                 </div>
             </div>
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $('#horizontalTab').easyResponsiveTabs({
-                        type: 'default', //Types: default, vertical, accordion
-                        width: 'auto', //auto or any width like 600px
-                        fit: true   // 100% fit in a container
+            @*<script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#horizontalTab').easyResponsiveTabs({
+                            type: 'default', //Types: default, vertical, accordion
+                            width: 'auto', //auto or any width like 600px
+                            fit: true   // 100% fit in a container
+                        });
                     });
-                });
-            </script>
+                </script>*@
             <div class="content_bottom">
                 <div class="heading">
                     <h3>Sản phẩm liên quan</h3>
@@ -115,22 +106,22 @@
                 {
                     var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
                     <div class="grid_1_of_4 images_1_of_4">
-                    <a href="@url"><img src="@item.Image" alt=""></a>
-                    <div class="price" style="border:none">
-                        <div class="add-cart" style="float:none">
-                            <h4><a href="/them-gio-hang?productId=@item.ID&quantity=1">Thêm vào giỏ</a></h4>
+                        <a href="@url"><img src="@item.Image" alt=""></a>
+                        <div class="price" style="border:none">
+                            <div class="add-cart" style="float:none">
+                                <h4><a href="/them-gio-hang?productId=@item.ID&quantity=1">Thêm vào giỏ</a></h4>
+                            </div>
+                            <div class="clear"></div>
                         </div>
-                        <div class="clear"></div>
                     </div>
-                </div> 
                 }
-                              
+
             </div>
         </div>
         <div class="rightsidebar span_3_of_1">
-            <h2>CATEGORIES</h2>            
-                @{ Html.RenderAction("ProductCategory", "Product");}            
-            <div class="subscribe">
+            <h2>CATEGORIES</h2>
+            @{ Html.RenderAction("ProductCategory", "Product");}
+            @*<div class="subscribe">
                 <h2>Newsletters Signup</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.......</p>
                 <div class="signup">
@@ -138,8 +129,8 @@
                         <input type="text" value="E-mail address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail address';}"><input type="submit" value="Sign up">
                     </form>
                 </div>
-            </div>
-            <div class="community-poll">
+            </div>*@
+            @*<div class="community-poll">
                 <h2>Community POll</h2>
                 <p>What is the main reason for you to purchase products online?</p>
                 <div class="poll">
@@ -172,6 +163,21 @@
                         </ul>
                     </form>
                 </div>
+            </div>*@
+        </div>
+    </div>
+</div>
+<div id="image-gallery" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <ul class="media-middle">
+                    @foreach (var item in newimages.Split('#').Take(newimages.Split('#').Count() - 1))
+                    {
+                        <img src="@item" style="width: 350px; height: 350px" />
+                    }
+                </ul>
+
             </div>
         </div>
     </div>

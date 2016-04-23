@@ -1756,6 +1756,7 @@
     <Content Include="assets\client\js\controller\contactController.js" />
     <Content Include="assets\client\js\controller\emailController.js" />
     <Content Include="assets\client\js\controller\passwordController.js" />
+    <Content Include="assets\client\js\controller\productController.js" />
     <Content Include="assets\client\js\controller\userController.js" />
     <Content Include="assets\client\js\controller\wishController.js" />
     <Content Include="assets\client\js\easing.js" />

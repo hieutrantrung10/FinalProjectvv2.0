@@ -122,5 +122,22 @@ namespace OnlineShopv2.Controllers
             return View(model);
         }
 
+        public JsonResult LoadImage(long id)
+        {
+            ProductDao dao = new ProductDao();
+            var product = dao.GetByID(id);
+            var images = product.MoreImages;
+            XElement xImages = XElement.Parse(images);
+            List<string> listImagesReturn = new List<string>();
+
+            foreach (XElement element in xImages.Elements())
+            {
+                listImagesReturn.Add(element.Value);
+            }
+            return Json(new
+            {
+                data = listImagesReturn
+            },JsonRequestBehavior.AllowGet);
+        }
     }
 }
