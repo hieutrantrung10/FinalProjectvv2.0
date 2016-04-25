@@ -29,6 +29,12 @@ namespace Model.EF
         [StringLength(50)]
         public string Email { get; set; }
 
+        [StringLength(250)]
+        public string SecurityQuestion { get; set; }
+
+        [StringLength(250)]
+        public string SecurityAnswer { get; set; }
+
         [StringLength(50)]
         public string Phone { get; set; }
 

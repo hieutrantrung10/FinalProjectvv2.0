@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
@@ -79,6 +80,8 @@ namespace OnlineShopv2.Controllers
                     {
                         user.VillageID = int.Parse(model.VillageID);
                     }
+                    user.SecurityQuestion = model.SecurityQuestion;
+                    user.SecurityAnswer = model.SecurityAnswer;
                     string token = Guid.NewGuid().ToString();
                     user.CreatedBy = token;
                     var result = dao.Insert(user);
@@ -173,7 +176,8 @@ namespace OnlineShopv2.Controllers
                 var tmp = model.Email;
                 var dao = new UserDao();
                 var user = dao.GetByEmail(tmp);
-                if (user.Password == model.Password)
+
+                if (user.Password == Encryptor.MD5Hash(model.Password))
                 {
                     var encryptedMd5Pas = Encryptor.MD5Hash(model.NewPassword);
                     user.Password = encryptedMd5Pas;
@@ -190,29 +194,43 @@ namespace OnlineShopv2.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("","bạn đã nhập sai mật khâu cũ");
+                    ModelState.AddModelError("","Bạn đã nhập sai mật khâu cũ");
                 }
                 
             }
             return View(model);
         }
 
-        //test forgot password
+        private string GenerateNewPass(int size)
+        {
+            StringBuilder sb = new StringBuilder();
+            Random random = new Random();
+            char ch;
+            for (int i = 1; i < size + 1; i++)
+            {
+                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26*random.NextDouble() + 65)));
+                sb.Append(ch);
+            }
+            return sb.ToString();
+        }
+
+        //test random password
         public ActionResult ForgotPassword()
         {
             return View();
         }
-
+       
         [HttpPost]
         public JsonResult ForgotPassword(string email,string username)
         {
+            string newpass = GenerateNewPass(6);
             var dao = new UserDao();
             var user = dao.GetByEmail(email);
-            user.Password = Encryptor.MD5Hash("123456");
+            user.Password = Encryptor.MD5Hash(newpass);
             var result = dao.ChangePass(user);
             if (result)
             {
-                string password = "123456";
+                string password = newpass;
                 string mail =
                     System.IO.File.ReadAllText(Server.MapPath("~/assets/client/template/GetPassword.html"));
                 mail = mail.Replace("{{UserName}}", username);
@@ -232,6 +250,59 @@ namespace OnlineShopv2.Controllers
                 });
             }
             
+        }
+
+        //test forgot password
+
+        public ActionResult PasswordReclaim()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PasswordReclaim(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new UserDao();
+                var entity = dao.GetByEmail(user.Email);
+                if (entity.UserName == user.UserName)
+                {
+                    TempData["member"] = entity;
+                    TempData["question"] = entity.SecurityQuestion;
+                    return RedirectToAction("AnswerSecurityQuestion");
+                }
+                ModelState.AddModelError("","Bạn đã nhập sai thông tin về UserName hoặc Email");
+            }
+            
+            return View();
+            
+        }
+
+        public ActionResult AnswerSecurityQuestion()
+        {
+            ViewBag.SecQuestion = TempData["question"];
+            return View();
+            //return View();
+        }
+        [HttpPost]
+        public ActionResult AnswerSecurityQuestion(AnswerModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new UserDao();                
+                var user = (User)TempData["member"];
+                if (model.SecurityAnswer == user.SecurityAnswer)
+                {
+                    string mail =
+                            System.IO.File.ReadAllText(Server.MapPath("~/assets/client/template/ReclaimPassword.html"));
+                    mail = mail.Replace("{{UserName}}", user.UserName);
+                    dao.ChangePass(user);
+                    mail = mail.Replace("{{Password}}",user.Password);
+                    new MailHelper().SendMail(user.Email, "Lấy lại mật khẩu", mail);
+                }
+            }
+            return RedirectToAction("Login");
         }
         #region LOGIN
         [HttpGet]

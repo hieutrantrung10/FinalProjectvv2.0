@@ -45,5 +45,10 @@ namespace OnlineShopv2.Models
         [Display(Name = "Xã/Thị trấn")]
         public string VillageID { set; get; }
 
+        [Display(Name = "Câu hỏi bí mật")]
+        public string SecurityQuestion { get; set; }
+
+        [Display(Name = "Câu trả lời")]
+        public string SecurityAnswer { get; set; }
     }
 }

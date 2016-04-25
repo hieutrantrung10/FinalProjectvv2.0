@@ -1,0 +1,62 @@
+﻿@model OnlineShopv2.Models.AnswerModel
+@{
+    ViewBag.Title = "AnswerSecurityQuestion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string question = ViewBag.SecQuestion;
+}
+
+@using (Html.BeginForm("AnswerSecurityQuestion", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4 class="col-md-7">Trả lời câu hỏi bí mật</h4>
+        <hr />
+        <div class="form-group">
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            @if (ViewBag.Success != null)
+            {
+                <div class="alert alert-success">@ViewBag.Success</div>
+            }
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SecurityQuestion, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5">
+                <p>@question</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SecurityAnswer, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(model => model.SecurityAnswer, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SecurityAnswer, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.SecurityQuestion, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.TextBoxFor(model => model.SecurityQuestion, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SecurityQuestion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SecurityAnswer, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.TextBoxFor(model => model.SecurityAnswer, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SecurityAnswer, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            <label class="control-label col-md-4"></label>
+            <div class="col-md-8">
+                <input type="submit" value="Trả lời câu hỏi bí mật" class="btn btn-instagram" />
+            </div>
+        </div>
+    </div>
+
+}
+

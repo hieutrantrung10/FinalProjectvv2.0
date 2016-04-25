@@ -97,6 +97,23 @@
                     @Html.ValidationMessageFor(model => model.VillageID, "", new { @class = "text-danger" })
                 </div>
             </div>
+            
+            <div class="form-group">
+                @Html.LabelFor(model => model.SecurityQuestion, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.TextBoxFor(model => model.SecurityQuestion, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SecurityQuestion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SecurityAnswer, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-5">
+                    @Html.TextBoxFor(model => model.SecurityAnswer, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SecurityAnswer, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
             <div class="form-group">
                 <label class="control-label col-md-3">Mã xác nhận</label>
                 <div class="col-md-5">

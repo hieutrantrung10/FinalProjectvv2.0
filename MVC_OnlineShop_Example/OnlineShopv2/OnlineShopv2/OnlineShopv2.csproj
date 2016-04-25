@@ -205,6 +205,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Models\DistrictModel.cs" />
@@ -1773,6 +1774,7 @@
     <Content Include="assets\client\template\ConfirmEmail.html" />
     <Content Include="assets\client\template\feedback.html" />
     <Content Include="assets\client\template\GetPassword.html" />
+    <Content Include="assets\client\template\ReclaimPassword.html" />
     <Content Include="assets\client\template\neworder.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -2225,6 +2227,8 @@
     <Content Include="Views\User\ResendEmail.cshtml" />
     <Content Include="Views\User\ChangePassword.cshtml" />
     <Content Include="Views\User\ForgotPassword.cshtml" />
+    <Content Include="Views\User\PasswordReclaim.cshtml" />
+    <Content Include="Views\User\AnswerSecurityQuestion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
