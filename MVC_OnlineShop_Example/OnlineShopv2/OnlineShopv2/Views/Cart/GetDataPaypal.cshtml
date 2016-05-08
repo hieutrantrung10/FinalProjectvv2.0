@@ -1,0 +1,21 @@
+﻿@using System.Configuration
+
+@{
+    ViewBag.Title = "GetDataPaypal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+    <div>
+        Cảm ơn bạn đã thanh toán qua PayPal
+    </div>
+    <div>
+        <form action="@ConfigurationManager.AppSettings["urlSubmitPayment"]" method="POST">
+            <input type="hidden" name="cmd" value="_notify-synch">
+            <input type="hidden" name="tx" value="@ViewBag.tx">
+            <input type="hidden" name="at" value="@ConfigurationManager.AppSettings["Token"]">
+            <input type="submit" value="Get Data" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+

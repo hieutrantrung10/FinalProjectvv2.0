@@ -1,0 +1,25 @@
+﻿@using System.Configuration
+@model List<OnlineShopv2.Models.CartItem>
+@{
+    ViewBag.Title = "PaypalPayment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content">
+    <form action="@ConfigurationManager.AppSettings["urlSubmitPayment"]">
+        <input type="hidden" name="cmd" value="_cart" />
+        <input type="hidden" name="upload" value="1" />
+        <input type="hidden" name="return" value="@ConfigurationManager.AppSettings["urlReturn"]" />
+        <input type="hidden" name="business" value="@ConfigurationManager.AppSettings["accountBussiness"]" />
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <input type="hidden" name="@Url.Content("item_name_"+(i+1))" value="@Model[i].Product.Name" />
+            <input type="hidden" name="@Url.Content("item_number_" + (i + 1))" value="@Model[i].Product.Code" />
+            <input type="hidden" name="@Url.Content("amount_" + (i + 1))" value="@((Decimal.Round(Model[i].Product.Price.GetValueOrDefault(0)/24000)))" />
+            <input type="hidden" name="@Url.Content("quantity_" + (i + 1))" value="@Model[i].Quantity" />
+        }
+        <br />
+        <div class="col-md-12">
+            <input type="submit" value="Thanh toán với Paypal" class="btn btn-primary col-md-12" />
+        </div>
+    </form>
+</div>

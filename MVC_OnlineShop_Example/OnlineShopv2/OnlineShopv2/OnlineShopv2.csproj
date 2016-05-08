@@ -199,7 +199,9 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PaypalController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\TransferController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -209,8 +211,10 @@
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Models\DistrictModel.cs" />
+    <Compile Include="Models\GetDataPaypal.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\PayPalOrder.cs" />
     <Compile Include="Models\ProvinceModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\VillageModel.cs" />
@@ -1701,6 +1705,7 @@
     <Content Include="assets\client\data\Provinces_Data.xml" />
     <Content Include="assets\client\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\client\font\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\client\images\about us.jpg" />
     <Content Include="assets\client\images\about_img.jpg" />
     <Content Include="assets\client\images\arrow-next.png" />
     <Content Include="assets\client\images\arrow-prev.png" />
@@ -2229,11 +2234,16 @@
     <Content Include="Views\User\ForgotPassword.cshtml" />
     <Content Include="Views\User\PasswordReclaim.cshtml" />
     <Content Include="Views\User\AnswerSecurityQuestion.cshtml" />
+    <Content Include="Views\Transfer\Index.cshtml" />
+    <Content Include="Views\Cart\PaypalPayment.cshtml" />
+    <Content Include="Views\Cart\GetDataPaypal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\About\" />
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Data\" />
+    <Folder Include="Views\Paypal\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

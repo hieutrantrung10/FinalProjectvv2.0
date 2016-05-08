@@ -27,7 +27,21 @@ namespace OnlineShopv2.Controllers
             }
             return View(list);
         }
-
+        //Co chut nham lan vi o day chi la ham de them vao gio hang cua VIDU
+        //test submit to paypal
+        //[HttpPost]
+        //public ActionResult Index(CartItem cart)
+        //{
+        //    if (Session[CommonConstants.CartSession] != null)
+        //    {
+        //        var mc = Session[CommonConstants.CartSession] as List<CartItem>;
+        //    }
+        //    else
+        //    {
+        //        return RedirectToAction("Index", "Product");
+        //    }
+        //    return View();
+        //}
         public ActionResult WishList()
         {
             var wish = Session[Common.CommonConstants.WishSession];
@@ -308,6 +322,23 @@ namespace OnlineShopv2.Controllers
                 status = true
             });
         }
+        //test paypal payment
+        public ActionResult PaypalPayment()
+        {
+            if (Session[CommonConstants.CartSession] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            var mc = Session[CommonConstants.CartSession] as List<CartItem>;
+            return View(mc);
+        }
 
+        public ActionResult GetDataPaypal()
+        {
+            var getData = new GetDataPaypal();
+            var order = getData.InformationOrder(getData.GetPayPalResponse(Request.QueryString["tx"]));
+            ViewBag.tx = Request.QueryString["tx"];
+            return View();
+        }
     }
 }
