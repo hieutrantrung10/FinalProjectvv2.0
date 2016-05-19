@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -27,21 +28,7 @@ namespace OnlineShopv2.Controllers
             }
             return View(list);
         }
-        //Co chut nham lan vi o day chi la ham de them vao gio hang cua VIDU
-        //test submit to paypal
-        //[HttpPost]
-        //public ActionResult Index(CartItem cart)
-        //{
-        //    if (Session[CommonConstants.CartSession] != null)
-        //    {
-        //        var mc = Session[CommonConstants.CartSession] as List<CartItem>;
-        //    }
-        //    else
-        //    {
-        //        return RedirectToAction("Index", "Product");
-        //    }
-        //    return View();
-        //}
+        
         public ActionResult WishList()
         {
             var wish = Session[Common.CommonConstants.WishSession];
@@ -167,16 +154,25 @@ namespace OnlineShopv2.Controllers
                 var id = new OrderDao().Insert(order);
                 var cart = (List<CartItem>)Session[Common.CommonConstants.CartSession];
                 var detailDao = new OrderDetailDao();
-                decimal total = 0;
+                decimal total = 0;                
+
+                DataTable tbl = new DataTable();
+                tbl.Columns.Add("Tên SP", typeof (string));
+                tbl.Columns.Add("Giá SP", typeof(decimal));
+                tbl.Columns.Add("Số lượng", typeof (int));
+
                 foreach (var item in cart)
-                {
+                {                   
                     var orderDetail = new OrderDetail();
                     orderDetail.ProductID = item.Product.ID;
                     orderDetail.OrderID = id;
                     orderDetail.Price = item.Product.Price;
                     orderDetail.Quantity = item.Quantity;
                     orderDetail.ProductName = item.Product.Name;
-                    //bổ sung vào trong bảng SQL về tên sản phẩm và đơn giá sản phẩm 
+                    //bổ sung vào trong bảng SQL về tên sản phẩm và đơn giá sản phẩm                     
+
+                    tbl.Rows.Add(item.Product.Name, item.Product.Price, item.Quantity);
+                    //
                     detailDao.Insert(orderDetail);                    
                     total += (item.Product.Price.GetValueOrDefault(0) * item.Quantity);
                 }
@@ -186,7 +182,9 @@ namespace OnlineShopv2.Controllers
                 content = content.Replace("{{OrderID}}", order.ID.ToString());
                 content = content.Replace("{{PhoneNumber}}", phoneNumber);
                 content = content.Replace("{{Email}}", email);
-                content = content.Replace("{{Address}}", address);                
+                content = content.Replace("{{Address}}", address);
+                content = content.Replace("{{Include}}", ConvertDataTableToHTML(tbl));
+                
                 content = content.Replace("{{Total}}", total.ToString("N0"));
 
                 var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
@@ -203,17 +201,26 @@ namespace OnlineShopv2.Controllers
             return Redirect("/hoan-thanh");
 
         }
-
-        ////test
-
-        //public ActionResult PaypalPayment()
-        //{
-        //    var getData = new GetDataPaypal();
-        //    var order = getData.InformationOrder(getData.GetPayPalResponse(Request.QueryString["tx"]));
-        //    ViewBag.tx = Request.QueryString["tx"];
-        //    return View();
-        //}
-        ////end
+        private static string ConvertDataTableToHTML(DataTable dt)
+        {
+            string html = "<table border='1'>";
+            //add header row
+            html += "<tr>";
+            for (int i = 0; i < dt.Columns.Count; i++)
+                html += "<td>" + dt.Columns[i].ColumnName + "</td>";
+            html += "</tr>";
+            //add rows
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                html += "<tr>";
+                for (int j = 0; j < dt.Columns.Count; j++)
+                    html += "<td>" + dt.Rows[i][j].ToString() + "</td>";
+                html += "</tr>";
+            }
+            html += "</table>";
+            return html;
+        }
+                
         public ActionResult Success()
         {
             return View();
@@ -325,12 +332,82 @@ namespace OnlineShopv2.Controllers
         //test paypal payment
         public ActionResult PaypalPayment()
         {
-            if (Session[CommonConstants.CartSession] == null)
+            if (Session[CommonConstants.USER_SESSION] != null)
             {
-                return RedirectToAction("Index", "Home");
+                if (Session[CommonConstants.CartSession] == null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                var mc = Session[CommonConstants.CartSession] as List<CartItem>;
+
+                //test them don hang da thanh toan vao admin
+                string content = System.IO.File.ReadAllText((Server.MapPath("~/assets/client/template/neworder.html")));
+                var current = (UserLogin) Session[CommonConstants.USER_SESSION];
+                var userdao = new UserDao();
+                var user = (userdao.GetById(current.UserName));
+                var order = new Order();
+                order.CreatedDate = DateTime.Now;
+                order.ShipAddress = user.Address;
+                order.ShipMobile = user.Phone;
+                order.ShipName = user.Name;
+                order.ShipEmail = user.Email;
+                order.Status = 2;
+                try
+                {
+                    var id = new OrderDao().Insert(order);
+                    var cart = (List<CartItem>)Session[Common.CommonConstants.CartSession];
+                    var detailDao = new OrderDetailDao();
+                    decimal total = 0;
+
+                    DataTable tbl = new DataTable();
+                    tbl.Columns.Add("Tên SP", typeof(string));
+                    tbl.Columns.Add("Giá SP", typeof(decimal));
+                    tbl.Columns.Add("Số lượng", typeof(int));
+
+                    foreach (var item in cart)
+                    {
+                        var orderDetail = new OrderDetail();
+                        orderDetail.ProductID = item.Product.ID;
+                        orderDetail.OrderID = id;
+                        orderDetail.Price = item.Product.Price;
+                        orderDetail.Quantity = item.Quantity;
+                        orderDetail.ProductName = item.Product.Name;
+                        //bổ sung vào trong bảng SQL về tên sản phẩm và đơn giá sản phẩm                     
+
+                        tbl.Rows.Add(item.Product.Name, item.Product.Price, item.Quantity);
+                        //
+                        detailDao.Insert(orderDetail);
+                        total += (item.Product.Price.GetValueOrDefault(0) * item.Quantity);
+                    }
+                    //string content = System.IO.File.ReadAllText((Server.MapPath("~/assets/client/template/neworder.html")));
+
+                    content = content.Replace("{{CustomerName}}", user.Name);
+                    content = content.Replace("{{OrderID}}", order.ID.ToString());
+                    content = content.Replace("{{PhoneNumber}}", user.Phone);
+                    content = content.Replace("{{Email}}", user.Email);
+                    content = content.Replace("{{Address}}", user.Address);
+                    content = content.Replace("{{Include}}", ConvertDataTableToHTML(tbl));
+
+                    content = content.Replace("{{Total}}", total.ToString("N0"));
+
+                    var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+
+                    new MailHelper().SendMail(user.Email, "Đơn hàng mới từ HomeSHOP", content);
+                    new MailHelper().SendMail(toEmail, "Đơn hàng mới từ HomeSHOP", content);
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return Redirect("/loi-gui-don-hang");
+                }
+                return View(mc);
             }
-            var mc = Session[CommonConstants.CartSession] as List<CartItem>;
-            return View(mc);
+            else
+            {
+                return RedirectToAction("Login", "User");
+            }
+           
         }
 
         public ActionResult GetDataPaypal()

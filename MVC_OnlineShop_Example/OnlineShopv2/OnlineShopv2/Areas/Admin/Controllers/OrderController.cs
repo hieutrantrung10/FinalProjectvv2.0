@@ -7,7 +7,7 @@ using Model.Dao;
 
 namespace OnlineShopv2.Areas.Admin.Controllers
 {
-    public class OrderController : Controller
+    public class OrderController : BaseController
     {
         // GET: Admin/Order
         public ActionResult Index(string searchString, int page = 1, int pageSize = 10)

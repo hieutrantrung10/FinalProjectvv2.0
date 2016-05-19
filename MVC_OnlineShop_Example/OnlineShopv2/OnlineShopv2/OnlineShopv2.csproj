@@ -187,6 +187,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
@@ -1779,6 +1780,7 @@
     <Content Include="assets\client\template\ConfirmEmail.html" />
     <Content Include="assets\client\template\feedback.html" />
     <Content Include="assets\client\template\GetPassword.html" />
+    <Content Include="assets\client\template\paypalorder.html" />
     <Content Include="assets\client\template\ReclaimPassword.html" />
     <Content Include="assets\client\template\neworder.html" />
     <Content Include="favicon.ico" />
@@ -2181,6 +2183,11 @@
     <Content Include="Areas\Admin\Views\Order\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\Feedback\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Feedback\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

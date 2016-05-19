@@ -56,7 +56,7 @@
                                     <td>@item.CreatedDate.Value.ToString("dd-MM-yyyy")</td>
                                     <td>@item.ShipName</td>
                                     <td>@item.ShipAddress</td>
-                                    <td><a href="#" class="btn-change" data-id="@item.ID">@(item.Status == 0 ? "Đang xử lý" : (item.Status==1 ? "Đã gửi" : "Hủy đơn"))</a></td>
+                                    <td><a href="#" class="btn-change" data-id="@item.ID">@(item.Status == 0 ? "Đang xử lý" : (item.Status==1 ? "Đã gửi" : (item.Status==2 ?"Đã thanh toán":"Hủy đơn hàng")))</a></td>
                                     <td>
                                         @*<a href="/Admin/Order/Edit/@item.ID">Sửa</a>*@
                                         <a href="/Admin/Order/Detail/@item.ID">Chi tiết đơn hàng</a>

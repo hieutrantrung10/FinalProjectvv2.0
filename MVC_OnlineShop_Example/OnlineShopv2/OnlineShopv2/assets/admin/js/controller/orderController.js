@@ -20,7 +20,9 @@
                         btn.text('Đang xử lý');
                     }else if (d == 1) {
                         btn.text('Đã gửi');
-                    } else {
+                    }else if (d == 2) {
+                        btn.text('Đã thanh toán');
+                    }else {
                         btn.text('Hủy đơn');
                     }
                 },

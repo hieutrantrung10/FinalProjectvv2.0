@@ -51,7 +51,11 @@
                     <div class="price">
                         <p>Giá: <span>@(Model.Price.HasValue ? Model.Price.Value.ToString("N0") : "Liên hệ")</span></p>
                     </div>
-
+                    <div class="warrenty">
+                        <div>
+                            <p>Bảo hành: <span>@(Model.Warranty.HasValue ? Model.Warranty.Value.ToString()+ " năm" : "Liên hệ")</span></p>
+                        </div>
+                    </div>
                     <div class="share-desc">
                         <div class="share">
                             <p>Chia sẻ :</p>
@@ -63,7 +67,7 @@
                     </div>
                     <div class="wish-list">
                         <ul>
-                            <li class="wish"><a href="/them-ua-thich?productId=@Model.ID&quantity=1">Có thể sẽ mua</a></li>
+                            <li class="fa fa-heart"><a href="/them-ua-thich?productId=@Model.ID&quantity=1">Yêu thích</a></li>
                             <li class="compare"><a href="#">So sánh</a></li>
                         </ul>
                     </div>

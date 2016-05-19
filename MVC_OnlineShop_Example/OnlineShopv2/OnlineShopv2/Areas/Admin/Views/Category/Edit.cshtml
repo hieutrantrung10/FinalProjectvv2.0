@@ -1,18 +1,17 @@
 ﻿@model Model.EF.Category
-
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
 }
 
-@section header{
-    Tạo mới danh mục
+@section header
+{
+    Chỉnh sửa danh mục
 }
-
-@using (Html.BeginForm("Create","Category",FormMethod.Post)) 
+@using (Html.BeginForm("Edit","Category",FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Category</h4>
         <hr />
@@ -20,61 +19,53 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Name,  new { @class = "form-control" } )
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.MetaTitle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.MetaTitle,  new { @class = "form-control" } )
+                @Html.TextBoxFor(model => model.MetaTitle, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MetaTitle, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.ParentID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.ParentID,  new { @class = "form-control" })
+                @Html.TextBoxFor(model => model.ParentID, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ParentID, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.DisplayOrder, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.DisplayOrder,  new { @class = "form-control" } )
+                @Html.TextBoxFor(model => model.DisplayOrder, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.DisplayOrder, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.SeoTitle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.SeoTitle,  new { @class = "form-control"  })
+                @Html.TextBoxFor(model => model.SeoTitle, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.SeoTitle, "", new { @class = "text-danger" })
             </div>
         </div>
 
-      
-
         <div class="form-group">
             @Html.LabelFor(model => model.MetaKeywords, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.MetaKeywords,  new { @class = "form-control"  })
+                @Html.TextBoxFor(model => model.MetaKeywords, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MetaKeywords, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.MetaDescriptions, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.MetaDescriptions,  new { @class = "form-control"  })
+                @Html.TextBoxFor(model => model.MetaDescriptions, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MetaDescriptions, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -85,16 +76,15 @@
             </div>
         </div>
 
-        
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Tạo mới" class="btn btn-default" />
+                <input type="submit" value="Sửa" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
-
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+

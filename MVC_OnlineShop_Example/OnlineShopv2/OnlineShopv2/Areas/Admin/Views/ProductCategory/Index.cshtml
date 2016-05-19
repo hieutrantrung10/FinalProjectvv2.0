@@ -1,0 +1,75 @@
+﻿@model PagedList.IPagedList<Model.EF.ProductCategory>
+@using PagedList           
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Danh mục loại sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+@section header
+{
+    Danh mục loại sản phẩm
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel panel-heading">
+                Danh mục các loại sản phẩm
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("Index", "ProductCategory", FormMethod.Get))
+                {
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-md-4">
+                                <input type="text" value="@ViewBag.SearchString" class="form-control" name="searchString" />
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-success">Tìm kiếm</button>
+                                <a type="submit" class="btn btn-primary" href="/Admin/ProductCategory/Create">Thêm mới</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tên danh mục</th>
+                                <th>Người tạo</th>
+                                <th>Thứ tự hiển thị</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="success" id="row_@item.ID">
+                                    <td>
+                                        <a href="/Admin/ProductCategory/Edit/@item.ID">Sửa</a>
+                                        |
+                                        @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
+                                        {
+                                            Confirm = "Bạn có chắc muốn xóa tin tức này ?",
+                                            OnComplete = "$('#row_" + @item.ID + "').remove()",
+                                            HttpMethod = "Delete"
+                                        })
+                                    </td>
+                                    <td>@item.Name</td>
+                                    <td>@item.CreatedBy</td>
+                                    <td>@item.DisplayOrder</td>
+                                </tr>
+                            }
+
+
+                        </tbody>
+                    </table>
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @searchString = @ViewBag.SearchString }))
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+        </div>
+    </div>
+</div>
+

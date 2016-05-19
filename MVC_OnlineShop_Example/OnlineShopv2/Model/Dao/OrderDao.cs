@@ -45,6 +45,9 @@ namespace Model.Dao
                     order.Status = 2;
                     break;
                 case 2:
+                    order.Status = 3;
+                    break;
+                case 3:
                     order.Status = 0;
                     break;
                 default:
